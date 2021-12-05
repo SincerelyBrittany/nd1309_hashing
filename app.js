@@ -6,7 +6,7 @@
 /**
  * Step 2: Import from crypto-js module the sha265 library
  */
-
+const SHA256 = require("crypto-js/sha256");
 // Write your code here
 
 /**
@@ -26,8 +26,11 @@ const dataObject = {
  * @param {*} obj 
  */
 
-function generateHash(obj) {
+ function generateHash(obj) {
 	// Write your code here
+  	let newObject = JSON.stringify(obj)
+  	let hash = SHA256(newObject)
+  	return hash
 }
 
 console.log(`SHA256 Hash: ${generateHash(data1)}`);
